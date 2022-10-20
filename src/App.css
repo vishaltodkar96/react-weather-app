@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+    background: rgb(54, 53, 53);
+    height: 100vh;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: -150px;
+    margin-bottom: 50px;
+}
+input{
+    width:200px;
+    padding: 8px;
+}
+.searchButton{
+    padding:8px;
+    color:black;
+    font-weight: 700;
+    background-color:aqua;
+    margin: 0 5px;
+}
+.widget{
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    width:650px;
+    height: 400px;
+    cursor: pointer;
+    box-shadow: 2px 2px 50px 2px black , -2px -2px 50px 2px black;
+}
+.widget .weatherIcon{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 100px;
+    height: 40%;
+    background: #fff;
+    color: black;
+    width: 100%;
+}
+.widget .weatherInfo{
+    display: flex;
+    align-items: center;
+    height: 35%;
+    width: 60%;
+}
+.widget .weatherInfo .temprature{
+    width:35%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 60px;
+    margin: 0 40px;
+}
+.weatherCond{
+    font-size: 35px;
+    font-weight: 150;
+}
+.place{
+    font-size: 25px;
+}
+.date{
+    width:40%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 40px;
+    font-weight:700;
+    text-align: center;
+    background-color: aliceblue;
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.extra-temp .temp-info-minmax{
+    display:flex;
+    justify-content: space-evenly;
+    width:650px;
+    background-color: aquamarine;
+    color: black;
+    height: 120%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.two-sided-section{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 10px; 
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: 700;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.extra-info-leftside{
+    margin: 0 20px;
 }
