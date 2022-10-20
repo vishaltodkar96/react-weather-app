@@ -8,27 +8,32 @@ function App() {
 
   const url = `http://api.weatherstack.com/current?access_key=69a62b32158c749c8b3edfaec5045f89&query=${location}`;
 
-  const searchLocation = (event) => {
-    if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        console.log(response.data);
-      });
-      setLocation("");
-    }
+  const searchLocation = () => {
+    axios.get(url).then((response) => {
+      setData(response.data);
+      console.log(response.data);
+    }).catch(error => console.log(error));
+    setLocation("");
   };
 
   return (
     <>
-      <div className='wrap'>
+      <div className='wrap'>        
         <div className='search'>
+          <div className='note'>*NOTE : 
+            <ul>
+              <li>Click the lock icon, then click Site settings.</li>
+              <li>Scroll to Insecure content, then use the drop-down list to change “Block” to “Allow”.</li>
+              <li>Reload the page.</li>
+            </ul>
+          </div>
           <input
             value={location}
             onChange={(event) => setLocation(event.target.value)}
-            onKeyPress={searchLocation}
             placeholder="Enter Location"
             type="text"
           />
+          <button className='searchButton' type='button' onClick={searchLocation}>Search</button>
         </div>
       </div>
 
